@@ -1,0 +1,21 @@
+@import './app.scss';
+
+.navbar {
+    background-color: $yellow;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 0.5em 0;
+    .navbar-container {
+        height: 36px;
+        display: flex;
+        padding: 0 15%;
+    }
+    .brand-icon {
+        content: url("../res/Logo_ML.png");
+        height: 36px;
+        margin-right: 24px;
+    }
+}

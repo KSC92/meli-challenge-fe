@@ -1,0 +1,14 @@
+@import './app.scss';
+
+.product-item {
+    display: flex;
+    flex-grow: 1;
+    margin: 0 16px 16px 16px;
+    height: 180px;
+    background-color: white;
+    .product-img {
+        width: 180px;
+        height: 180px;
+        border-radius: 4px;
+    }
+}

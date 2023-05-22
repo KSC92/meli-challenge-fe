@@ -1,0 +1,28 @@
+@import "./app.scss";
+.search-input {
+  display: flex;
+  width: 100%;
+  input {
+    height: 22px;
+    flex: 1 1 0;
+    border: none;
+    border-radius: 3px 0 0 3px;
+    padding: 7px 12px;
+    font-size: 18px;
+    &:focus-visible {
+      outline: none;
+    }
+    &::placeholder {
+        color: $medium_gray;
+    }
+  }
+  .suffix {
+    height: 18px;
+    padding: 9px 12px;
+    border-radius: 0 3px 3px 0;
+    content: url("../res/ic_Search@2x.png");
+    background-color: $lite_gray;
+  }
+  .prefix {
+  }
+}
