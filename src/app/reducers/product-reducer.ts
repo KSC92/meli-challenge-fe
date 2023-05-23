@@ -5,11 +5,25 @@ import { Buffer } from "buffer"
 const author_name = "Karel"
 const author_lastname = "Sánchez Cabrera"
 
-export const secret = Buffer.from(author_name + author_lastname).toString("base64")
-export const secretMW = (s: string) => s + (s.indexOf('?') >= 0 ? (`&secret=${secret}`): (`?secret=${secret}`))
-
+export const secret = Buffer.from(author_name + author_lastname).toString(
+  "base64",
+)
+export const secretMW = (s: string) =>
+  s + (s.indexOf("?") >= 0 ? `&secret=${secret}` : `?secret=${secret}`)
+export interface Product {
+  id: string
+  title: string
+  price: {
+    currency: string
+    amount: Number
+    decimals: Number
+  }
+  picture: string
+  condition: string
+  free_shipping: Boolean
+}
 export interface ProductsState {
-  data: any[]
+  data: Product[]
   loading: "inactivo" | "pendiente"
   error: string
 }
