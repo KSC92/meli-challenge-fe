@@ -5,6 +5,7 @@ import { Navbar } from "./app/components/navbar"
 import { store } from "./app/store"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { ProductSearchList } from "./app/components/products-list"
+import { ProductDescription } from "./app/components/product-description"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <BreadCrumbs />
             <div className="view-container">
               <Routes>
+                <Route path="/items/:id" element={<ProductDescription />} />
                 <Route path="/items" element={<ProductSearchList />} />
                 <Route path="/" element={<ProductSearchList />} />
               </Routes>
@@ -26,5 +28,7 @@ function App() {
     </Provider>
   )
 }
+
+
 
 export default App

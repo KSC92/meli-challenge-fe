@@ -5,8 +5,19 @@ import { Buffer } from "buffer"
 const author_name = "Karel"
 const author_lastname = "Sánchez Cabrera"
 
-const secret = Buffer.from(author_name + author_lastname).toString("base64")
-const secretMW = (s: string) => s + `&secret=${secret}`
+export const secret = Buffer.from(author_name + author_lastname).toString("base64")
+export const secretMW = (s: string) => s + (s.indexOf('?') >= 0 ? (`&secret=${secret}`): (`?secret=${secret}`))
+
+export interface ProductsState {
+  data: any[]
+  loading: "inactivo" | "pendiente"
+  error: string
+}
+const initialState: ProductsState = {
+  data: [],
+  loading: "inactivo",
+  error: "",
+}
 
 export const getProducts = createAsyncThunk(
   "products",
@@ -20,7 +31,7 @@ export const getProducts = createAsyncThunk(
 
 export const productsSlice = createSlice({
   name: "products",
-  initialState: { data: [], error: "", loading: "inactivo" },
+  initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getProducts.pending, (state, action) => {

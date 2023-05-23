@@ -1,0 +1,60 @@
+@import "./app.scss";
+
+.product-description {
+  padding: 16px;
+  .product-description-top-panel {
+    display: flex;
+    .product-description-left-panel {
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 400px;
+      width: 60%;
+      background-position: center;
+      border-radius: 4px;
+    }
+    .product-description-right-panel {
+        width: 40%;
+      .product-description-state-and-sell {
+        margin-top: 32px;
+        margin-bottom: 16px;
+        font-size: 14px;
+        color: $medium_gray;
+        font-weight: 500;
+      }
+      .product-description-title {
+        margin-bottom: 32px;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      .product-description-price {
+        font-size: 46px;
+        margin-bottom: 32px;
+      }
+      .product-description-buy-button {
+        button {
+          background-color: $blue;
+          color: white;
+          padding: 8px 24px;
+          border-radius: 5px;
+          border: none;
+          width: 100%;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .product-description-bottom-panel {
+    margin-top: 16px;
+    .product-description-des-title {
+      font-size: 28px;
+      margin-bottom: 32px;
+      color: $gray;
+    }
+    .product-description-text {
+      white-space: pre-line;
+      font-size: 16px;
+      color: $medium_gray;
+      margin-bottom: 16px;
+    }
+  }
+}
